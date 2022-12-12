@@ -1,10 +1,19 @@
-import "./styles.css";
+import React, { useState } from "react";
 
-export default function App() {
+function App() {
+  const [data, setData] = useState("rahul");
+  // const [print, setPrint] = useState(false);
+
+  function getData(val) {
+    setData(val.target.value);
+    // setPrint(false);
+  }
   return (
-    <div className="App">
-      <h1>Hello CodeSandbox</h1>
-      <h2>Start editing to see some magic happen!</h2>
-    </div>
+    <>
+      {print ? <h1> {data} </h1> : null}
+      <input type=" text" onChange={getData} />
+      {/* <button onClick={() => setPrint(true)}>click</button> */}
+    </>
   );
 }
+export default App;
